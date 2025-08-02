@@ -9,7 +9,9 @@ import SwiftUI
 
 struct shapes_example: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        RoundedRectangle(cornerRadius: 10)
+            .frame(width: 300,height: 200)
+            .foregroundStyle(Color.blue)
     }
 }
 
