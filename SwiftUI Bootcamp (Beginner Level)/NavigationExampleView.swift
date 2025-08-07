@@ -9,7 +9,35 @@ import SwiftUI
 
 struct NavigationExampleView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            
+            ScrollView {
+                
+                Text("Hello, World!")
+            }
+            .navigationTitle("Hello")
+            .navigationBarItems(trailing: NavigationLink(destination: AddPage()) {
+                Image(systemName: "plus")
+            })
+                
+            
+        }
+    }
+}
+
+
+struct AddPage: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        ZStack {
+            Color.red.ignoresSafeArea()
+                .navigationBarHidden(true)
+            
+            Button("POP") {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
     }
 }
 
